@@ -21,11 +21,12 @@ spec:
         - containerPort: 8080
         volumeMounts:
         - name: nginx-index
-          mountPath: /app
+          mountPath: /app/index.html
+          subPath: index.html
       volumes:
-        - name: nginx-index
-          configMap:
-            name: nginx-index
-        items:
-          - key: index.html
-            path: index.html
+      -configMap:
+         items:
+         - key: index.html
+           path: index.html
+         name: nginx-index
+      name: nginx-index
