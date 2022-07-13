@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: webserver-1
-        image: nginx
+        image: registry.redhat.io/rhel8/nginx-120:1-44
         ports:
         - containerPort: 80
 ---
