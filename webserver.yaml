@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: webserver-1
-        image: registry.access.redhat.com/ubi8/nginx-118:1-69
+        image: httpd:2.4.53
         ports:
         - containerPort: 80
 ---
