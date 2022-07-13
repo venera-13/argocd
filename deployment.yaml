@@ -19,13 +19,13 @@ spec:
         image: bitnami/nginx:1.21.6
         ports:
         - containerPort: 8080
-    volumeMounts:
-    - mountPath: /app
-          name: nginx-index
-  volumes:
-      - name: nginx-index
-        configMap:
-          name: nginx-index
-      items:
-        - key: index.html
-          path: index.html
+        volumeMounts:
+        - name: nginx-index
+          mountPath: /app
+      volumes:
+        - name: nginx-index
+          configMap:
+            name: nginx-index
+        items:
+          - key: index.html
+            path: index.html
