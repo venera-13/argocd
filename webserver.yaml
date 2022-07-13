@@ -1,35 +1,3 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: webserver-1
-  labels:
-    app: webserver-1
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: webserver-1
-  template:
-    metadata:
-      labels:
-        app: webserver-1
-    spec:
-      containers:
-      - name: webserver-1
-        image: bitnami/nginx:1.21.6
-        ports:
-        - containerPort: 8080
-	  volumeMounts:
-	  - mountPath: /app
-          name: nginx-index
-	volumes:
-      - name: nginx-index
-        configMap:
-          name: nginx-index
-	    items:
-	      - key: index.html
-	        path: index.html
----
 apiVersion: v1
 kind: Service
 metadata:
